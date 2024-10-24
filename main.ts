@@ -2,7 +2,7 @@
  *
  * Created by: Pablo Carreras
  * Created on: Oct 2024
- * This program ...
+ * This program turns red when the sonar is cles and turns green when the sonar is far
 */
 
 //variable 

@@ -32,6 +32,12 @@ input.onButtonPressed(Button.A, function () {
         neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
         neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
         neopixelStrip.show()
+        basic.pause(3000)
+        neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.show()
     }
     else {
         disctanceToObject >= 10 
@@ -39,6 +45,12 @@ input.onButtonPressed(Button.A, function () {
         neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
         neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
         neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        neopixelStrip.show()
+        basic.pause(3000)
+        neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+        neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
         neopixelStrip.show()
     }
     

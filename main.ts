@@ -5,11 +5,11 @@
  * This program turns red when the sonar is cles and turns green when the sonar is far
 */
 
-//variable 
+// variable 
 let disctanceToObject: number = 0
 let neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 
-//setup 
+// setup 
 neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
@@ -18,7 +18,7 @@ neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
-//find the disctance of the sonar 
+// find the disctance of the sonar 
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
     disctanceToObject = sonar.ping(
@@ -26,6 +26,8 @@ input.onButtonPressed(Button.A, function () {
         DigitalPin.P2,
         PingUnit.Centimeters
     )
+
+    // Red Light 
     if (disctanceToObject < 10){
         neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
         neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
@@ -33,15 +35,7 @@ input.onButtonPressed(Button.A, function () {
         neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
         neopixelStrip.show()
         basic.showString(disctanceToObject + 'cm')
-        basic.pause(2000)
-        neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.show()
-        basic.showIcon(IconNames.Happy)
-    }
-    else {
+    } else {
         disctanceToObject >= 10 
         neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
         neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
@@ -49,14 +43,15 @@ input.onButtonPressed(Button.A, function () {
         neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
         neopixelStrip.show()
         basic.showString(disctanceToObject + 'cm')
-        basic.pause(2000)
-        neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
-        neopixelStrip.show()
-        basic.showIcon(IconNames.Happy)
-    }
-    
-})
 
+    }
+
+    // green light 
+    basic.pause(2000)
+    neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.show()
+    basic.showIcon(IconNames.Happy)
+})
